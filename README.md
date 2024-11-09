@@ -12,3 +12,6 @@ Main Features:
 2.Kill Roblox
 3.Paste/Copy into textbox
 4.Auto saving workspace and folde with your scripts
+
+Additional:
+Scripts folder location: ./workspace/Scripts
