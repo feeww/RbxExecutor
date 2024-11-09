@@ -10,13 +10,21 @@ namespace Executor
     public partial class Form1 : Form
     {
         public void ErrorMsg(string ErrorText)
-        {
-            MessageBox.Show(ErrorText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {MessageBox.Show(ErrorText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);}
+        public void CreateFolder(string path)
+        { 
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            else { }
         }
+
 
         public Form1()
         {
             InitializeComponent();
+            CreateFolder("./workspace/Scripts");
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -77,6 +85,8 @@ namespace Executor
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (CoreFunctions.IsInjected())
+            {
             if (CoreFunctions.IsInjected() == false) { pnlStatus.BackColor = Color.DarkRed; lblInject.Text = "Not Injected"; };
             if (CoreFunctions.IsInjected() == true) { pnlStatus.BackColor = Color.DarkGreen;lblInject.Text = "Injected"; };
 
@@ -85,6 +95,8 @@ namespace Executor
                 {this.lbScripts.Items.Add(fileInfo.Name);}
             foreach (FileInfo fileInfo2 in new DirectoryInfo("./Scripts").GetFiles("*.lua"))
                 {this.lbScripts.Items.Add(fileInfo2.Name);}
+            }
+
         }
 
         private void lbScripts_MouseDoubleClick(object sender, MouseEventArgs e)

@@ -31,10 +31,11 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            lblInject = new Label();
+            pnlStatus = new Panel();
             pictureBox2 = new PictureBox();
             btnMinimise = new CodeeloUI.Controls.CodeeloButton();
             btnClose = new CodeeloUI.Controls.CodeeloButton();
-            pnlStatus = new Panel();
             scriptTextBox = new FastColoredTextBoxNS.FastColoredTextBox();
             pictureBox1 = new PictureBox();
             brnKillRoblox = new CodeeloUI.Controls.CodeeloButton();
@@ -44,7 +45,6 @@
             btnPaste = new CodeeloUI.Controls.CodeeloButton();
             lbScripts = new ListBox();
             timer1 = new System.Windows.Forms.Timer(components);
-            lblInject = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)scriptTextBox).BeginInit();
@@ -55,6 +55,7 @@
             // 
             panel1.BackColor = Color.FromArgb(40, 40, 40);
             panel1.Controls.Add(lblInject);
+            panel1.Controls.Add(pnlStatus);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(btnMinimise);
             panel1.Controls.Add(btnClose);
@@ -63,6 +64,25 @@
             panel1.Size = new Size(799, 34);
             panel1.TabIndex = 3;
             panel1.MouseDown += panel1_MouseDown;
+            // 
+            // lblInject
+            // 
+            lblInject.AutoSize = true;
+            lblInject.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblInject.ForeColor = SystemColors.Control;
+            lblInject.Location = new Point(39, 5);
+            lblInject.Name = "lblInject";
+            lblInject.Size = new Size(122, 24);
+            lblInject.TabIndex = 14;
+            lblInject.Text = "Not Injected";
+            // 
+            // pnlStatus
+            // 
+            pnlStatus.BackColor = Color.Brown;
+            pnlStatus.Location = new Point(0, 32);
+            pnlStatus.Name = "pnlStatus";
+            pnlStatus.Size = new Size(36, 23);
+            pnlStatus.TabIndex = 4;
             // 
             // pictureBox2
             // 
@@ -152,14 +172,6 @@
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click_1;
             // 
-            // pnlStatus
-            // 
-            pnlStatus.BackColor = Color.Brown;
-            pnlStatus.Location = new Point(0, 362);
-            pnlStatus.Name = "pnlStatus";
-            pnlStatus.Size = new Size(702, 10);
-            pnlStatus.TabIndex = 4;
-            // 
             // scriptTextBox
             // 
             scriptTextBox.AutoCompleteBracketsList = new char[]
@@ -178,7 +190,7 @@
             scriptTextBox.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\r\n";
             scriptTextBox.AutoScrollMinSize = new Size(187, 21);
             scriptTextBox.BackBrush = null;
-            scriptTextBox.BackColor = Color.FromArgb(50, 50, 50);
+            scriptTextBox.BackColor = Color.FromArgb(40, 40, 40);
             scriptTextBox.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
             scriptTextBox.CharHeight = 21;
             scriptTextBox.CharWidth = 11;
@@ -210,9 +222,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(550, 37);
+            pictureBox1.Location = new Point(549, 40);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(142, 122);
+            pictureBox1.Size = new Size(153, 120);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
@@ -228,7 +240,7 @@
             brnKillRoblox.BorderRadius = 10;
             brnKillRoblox.BorderSize = 3;
             brnKillRoblox.CausesValidation = false;
-            brnKillRoblox.ColorFill_1 = Color.FromArgb(50, 50, 50);
+            brnKillRoblox.ColorFill_1 = Color.FromArgb(40, 40, 40);
             brnKillRoblox.ColorFill_2 = Color.FromArgb(159, 185, 189);
             brnKillRoblox.DialogResult = false;
             brnKillRoblox.DrawTextShadow = true;
@@ -267,7 +279,7 @@
             Inject.BorderRadius = 10;
             Inject.BorderSize = 3;
             Inject.CausesValidation = false;
-            Inject.ColorFill_1 = Color.FromArgb(50, 50, 50);
+            Inject.ColorFill_1 = Color.FromArgb(40, 40, 40);
             Inject.ColorFill_2 = Color.FromArgb(159, 185, 189);
             Inject.DialogResult = false;
             Inject.DrawTextShadow = true;
@@ -277,7 +289,7 @@
             Inject.ForeColor = Color.WhiteSmoke;
             Inject.GradientBorderDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             Inject.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            Inject.Location = new Point(559, 316);
+            Inject.Location = new Point(550, 316);
             Inject.Name = "Inject";
             Inject.OnClick_BorderColor_1 = Color.Transparent;
             Inject.OnClick_BorderColor_2 = Color.Transparent;
@@ -287,7 +299,7 @@
             Inject.OnOver_BorderColor_2 = Color.Transparent;
             Inject.OnOver_FillColor_1 = Color.FromArgb(159, 164, 196);
             Inject.OnOver_FillColor_2 = Color.FromArgb(179, 205, 209);
-            Inject.Size = new Size(130, 35);
+            Inject.Size = new Size(139, 35);
             Inject.TabIndex = 8;
             Inject.TabStop = false;
             Inject.Text = "Inject";
@@ -306,7 +318,7 @@
             btnClear.BorderRadius = 10;
             btnClear.BorderSize = 3;
             btnClear.CausesValidation = false;
-            btnClear.ColorFill_1 = Color.FromArgb(50, 50, 50);
+            btnClear.ColorFill_1 = Color.FromArgb(40, 40, 40);
             btnClear.ColorFill_2 = Color.FromArgb(159, 185, 189);
             btnClear.DialogResult = false;
             btnClear.DrawTextShadow = true;
@@ -345,7 +357,7 @@
             Execute.BorderRadius = 10;
             Execute.BorderSize = 3;
             Execute.CausesValidation = false;
-            Execute.ColorFill_1 = Color.FromArgb(50, 50, 50);
+            Execute.ColorFill_1 = Color.FromArgb(40, 40, 40);
             Execute.ColorFill_2 = Color.FromArgb(159, 185, 189);
             Execute.DialogResult = false;
             Execute.DrawTextShadow = true;
@@ -384,7 +396,7 @@
             btnPaste.BorderRadius = 10;
             btnPaste.BorderSize = 3;
             btnPaste.CausesValidation = false;
-            btnPaste.ColorFill_1 = Color.FromArgb(50, 50, 50);
+            btnPaste.ColorFill_1 = Color.FromArgb(40, 40, 40);
             btnPaste.ColorFill_2 = Color.FromArgb(159, 185, 189);
             btnPaste.DialogResult = false;
             btnPaste.DrawTextShadow = true;
@@ -415,7 +427,7 @@
             // 
             // lbScripts
             // 
-            lbScripts.BackColor = Color.FromArgb(50, 50, 50);
+            lbScripts.BackColor = Color.FromArgb(40, 40, 40);
             lbScripts.BorderStyle = BorderStyle.None;
             lbScripts.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbScripts.ForeColor = SystemColors.Window;
@@ -432,25 +444,13 @@
             timer1.Interval = 2000;
             timer1.Tick += timer1_Tick;
             // 
-            // lblInject
-            // 
-            lblInject.AutoSize = true;
-            lblInject.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblInject.ForeColor = SystemColors.Control;
-            lblInject.Location = new Point(39, 5);
-            lblInject.Name = "lblInject";
-            lblInject.Size = new Size(122, 24);
-            lblInject.TabIndex = 14;
-            lblInject.Text = "Not Injected";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(40, 40, 40);
-            ClientSize = new Size(698, 369);
+            BackColor = Color.FromArgb(30, 30, 30);
+            ClientSize = new Size(698, 363);
             Controls.Add(lbScripts);
-            Controls.Add(pnlStatus);
             Controls.Add(btnPaste);
             Controls.Add(Execute);
             Controls.Add(btnClear);
