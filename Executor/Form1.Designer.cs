@@ -37,7 +37,6 @@
             btnMinimise = new CodeeloUI.Controls.CodeeloButton();
             btnClose = new CodeeloUI.Controls.CodeeloButton();
             scriptTextBox = new FastColoredTextBoxNS.FastColoredTextBox();
-            pictureBox1 = new PictureBox();
             brnKillRoblox = new CodeeloUI.Controls.CodeeloButton();
             Inject = new CodeeloUI.Controls.CodeeloButton();
             btnClear = new CodeeloUI.Controls.CodeeloButton();
@@ -48,7 +47,6 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)scriptTextBox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -218,17 +216,6 @@
             scriptTextBox.TabIndex = 5;
             scriptTextBox.Text = "print(1231231)";
             scriptTextBox.Zoom = 100;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(549, 40);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(153, 120);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // brnKillRoblox
             // 
@@ -432,9 +419,9 @@
             lbScripts.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbScripts.ForeColor = SystemColors.Window;
             lbScripts.FormattingEnabled = true;
-            lbScripts.Location = new Point(550, 165);
+            lbScripts.Location = new Point(550, 40);
             lbScripts.Name = "lbScripts";
-            lbScripts.Size = new Size(139, 144);
+            lbScripts.Size = new Size(139, 272);
             lbScripts.TabIndex = 12;
             lbScripts.MouseDoubleClick += lbScripts_MouseDoubleClick;
             // 
@@ -456,7 +443,6 @@
             Controls.Add(btnClear);
             Controls.Add(Inject);
             Controls.Add(brnKillRoblox);
-            Controls.Add(pictureBox1);
             Controls.Add(scriptTextBox);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -467,7 +453,6 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)scriptTextBox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -475,7 +460,6 @@
         private Panel panel1;
         private Panel pnlStatus;
         private FastColoredTextBoxNS.FastColoredTextBox scriptTextBox;
-        private PictureBox pictureBox1;
         private CodeeloUI.Controls.CodeeloButton brnKillRoblox;
         private CodeeloUI.Controls.CodeeloButton Inject;
         private CodeeloUI.Controls.CodeeloButton btnClear;
