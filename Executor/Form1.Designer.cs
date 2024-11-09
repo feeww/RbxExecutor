@@ -43,20 +43,22 @@
             btnPaste = new CodeeloUI.Controls.CodeeloButton();
             lbScripts = new ListBox();
             timer1 = new System.Windows.Forms.Timer(components);
+            pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)scriptTextBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(40, 40, 40);
+            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(btnMinimise);
-            panel1.Controls.Add(pnlStatus);
             panel1.Controls.Add(btnClose);
-            panel1.Location = new Point(0, -2);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 34);
+            panel1.Size = new Size(799, 34);
             panel1.TabIndex = 3;
             panel1.MouseDown += panel1_MouseDown;
             // 
@@ -80,7 +82,7 @@
             btnMinimise.ForeColor = Color.WhiteSmoke;
             btnMinimise.GradientBorderDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             btnMinimise.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            btnMinimise.Location = new Point(723, 5);
+            btnMinimise.Location = new Point(612, 5);
             btnMinimise.Name = "btnMinimise";
             btnMinimise.OnClick_BorderColor_1 = Color.Transparent;
             btnMinimise.OnClick_BorderColor_2 = Color.Transparent;
@@ -102,9 +104,9 @@
             // pnlStatus
             // 
             pnlStatus.BackColor = Color.Brown;
-            pnlStatus.Location = new Point(12, 14);
+            pnlStatus.Location = new Point(0, 362);
             pnlStatus.Name = "pnlStatus";
-            pnlStatus.Size = new Size(73, 10);
+            pnlStatus.Size = new Size(702, 10);
             pnlStatus.TabIndex = 4;
             // 
             // btnClose
@@ -127,7 +129,7 @@
             btnClose.ForeColor = Color.WhiteSmoke;
             btnClose.GradientBorderDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             btnClose.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            btnClose.Location = new Point(763, 5);
+            btnClose.Location = new Point(655, 5);
             btnClose.Name = "btnClose";
             btnClose.OnClick_BorderColor_1 = Color.Transparent;
             btnClose.OnClick_BorderColor_2 = Color.Transparent;
@@ -181,14 +183,14 @@
             scriptTextBox.LeftBracket = '[';
             scriptTextBox.LeftBracket2 = '{';
             scriptTextBox.LineNumberColor = Color.White;
-            scriptTextBox.Location = new Point(12, 38);
+            scriptTextBox.Location = new Point(0, 40);
             scriptTextBox.Name = "scriptTextBox";
             scriptTextBox.Paddings = new Padding(0);
             scriptTextBox.RightBracket = ']';
             scriptTextBox.RightBracket2 = '}';
             scriptTextBox.SelectionColor = Color.FromArgb(60, 255, 255, 255);
             scriptTextBox.ServiceColors = (FastColoredTextBoxNS.ServiceColors)resources.GetObject("scriptTextBox.ServiceColors");
-            scriptTextBox.Size = new Size(649, 343);
+            scriptTextBox.Size = new Size(544, 269);
             scriptTextBox.TabIndex = 5;
             scriptTextBox.Text = "print(1231231)";
             scriptTextBox.Zoom = 100;
@@ -196,9 +198,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(667, 38);
+            pictureBox1.Location = new Point(550, 37);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(130, 129);
+            pictureBox1.Size = new Size(142, 122);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
@@ -224,7 +226,7 @@
             brnKillRoblox.ForeColor = Color.WhiteSmoke;
             brnKillRoblox.GradientBorderDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             brnKillRoblox.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            brnKillRoblox.Location = new Point(548, 388);
+            brnKillRoblox.Location = new Point(431, 315);
             brnKillRoblox.Name = "brnKillRoblox";
             brnKillRoblox.OnClick_BorderColor_1 = Color.Transparent;
             brnKillRoblox.OnClick_BorderColor_2 = Color.Transparent;
@@ -263,7 +265,7 @@
             Inject.ForeColor = Color.WhiteSmoke;
             Inject.GradientBorderDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             Inject.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            Inject.Location = new Point(667, 386);
+            Inject.Location = new Point(559, 316);
             Inject.Name = "Inject";
             Inject.OnClick_BorderColor_1 = Color.Transparent;
             Inject.OnClick_BorderColor_2 = Color.Transparent;
@@ -273,7 +275,7 @@
             Inject.OnOver_BorderColor_2 = Color.Transparent;
             Inject.OnOver_FillColor_1 = Color.FromArgb(159, 164, 196);
             Inject.OnOver_FillColor_2 = Color.FromArgb(179, 205, 209);
-            Inject.Size = new Size(130, 37);
+            Inject.Size = new Size(130, 35);
             Inject.TabIndex = 8;
             Inject.TabStop = false;
             Inject.Text = "Inject";
@@ -302,7 +304,7 @@
             btnClear.ForeColor = Color.WhiteSmoke;
             btnClear.GradientBorderDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             btnClear.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            btnClear.Location = new Point(121, 386);
+            btnClear.Location = new Point(121, 316);
             btnClear.Name = "btnClear";
             btnClear.OnClick_BorderColor_1 = Color.Transparent;
             btnClear.OnClick_BorderColor_2 = Color.Transparent;
@@ -341,7 +343,7 @@
             Execute.ForeColor = Color.WhiteSmoke;
             Execute.GradientBorderDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             Execute.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            Execute.Location = new Point(12, 387);
+            Execute.Location = new Point(12, 316);
             Execute.Name = "Execute";
             Execute.OnClick_BorderColor_1 = Color.Transparent;
             Execute.OnClick_BorderColor_2 = Color.Transparent;
@@ -380,7 +382,7 @@
             btnPaste.ForeColor = Color.WhiteSmoke;
             btnPaste.GradientBorderDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             btnPaste.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            btnPaste.Location = new Point(230, 386);
+            btnPaste.Location = new Point(230, 315);
             btnPaste.Name = "btnPaste";
             btnPaste.OnClick_BorderColor_1 = Color.Transparent;
             btnPaste.OnClick_BorderColor_2 = Color.Transparent;
@@ -406,9 +408,9 @@
             lbScripts.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbScripts.ForeColor = SystemColors.Window;
             lbScripts.FormattingEnabled = true;
-            lbScripts.Location = new Point(667, 173);
+            lbScripts.Location = new Point(550, 165);
             lbScripts.Name = "lbScripts";
-            lbScripts.Size = new Size(130, 208);
+            lbScripts.Size = new Size(139, 144);
             lbScripts.TabIndex = 12;
             lbScripts.MouseDoubleClick += lbScripts_MouseDoubleClick;
             // 
@@ -418,13 +420,24 @@
             timer1.Interval = 2000;
             timer1.Tick += timer1_Tick;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(-18, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(73, 34);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 13;
+            pictureBox2.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(40, 40, 40);
-            ClientSize = new Size(800, 435);
+            ClientSize = new Size(698, 369);
             Controls.Add(lbScripts);
+            Controls.Add(pnlStatus);
             Controls.Add(btnPaste);
             Controls.Add(Execute);
             Controls.Add(btnClear);
@@ -434,11 +447,13 @@
             Controls.Add(scriptTextBox);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Form1";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)scriptTextBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -456,5 +471,6 @@
         private CodeeloUI.Controls.CodeeloButton btnPaste;
         private ListBox lbScripts;
         private System.Windows.Forms.Timer timer1;
+        private PictureBox pictureBox2;
     }
 }

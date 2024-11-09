@@ -9,6 +9,11 @@ namespace Executor
 {
     public partial class Form1 : Form
     {
+        public void ErrorMsg(string ErrorText)
+        {
+            MessageBox.Show(ErrorText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -22,14 +27,16 @@ namespace Executor
 
         private void Inject_Click_1(object sender, EventArgs e)
         {
-            CoreFunctions.Inject();
-            if (CoreFunctions.IsInjected() == false) { pnlStatus.BackColor = Color.DarkRed; };
-            if (CoreFunctions.IsInjected() == true) { pnlStatus.BackColor = Color.DarkGreen; };
+            if (CoreFunctions.IsRobloxOpen() == true)
+            { CoreFunctions.Inject(); }
+            else { ErrorMsg("Roblox not found!"); }
         }
 
         private void Execute_Click_1(object sender, EventArgs e)
         {
-            CoreFunctions.ExecuteScript(scriptTextBox.Text);
+            if (CoreFunctions.IsInjected() == true)
+            { CoreFunctions.ExecuteScript(scriptTextBox.Text); }
+            else { ErrorMsg("You are not Injected!"); }
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -43,7 +50,9 @@ namespace Executor
         }
         private void brnKillRoblox_Click(object sender, EventArgs e)
         {
-            CoreFunctions.KillRoblox();
+            if (CoreFunctions.IsRobloxOpen() == true)
+            { CoreFunctions.KillRoblox(); }
+            else { ErrorMsg("Roblox not found!"); }
         }
         private void btnClose_Click_1(object sender, EventArgs e)
         {
@@ -68,15 +77,14 @@ namespace Executor
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (CoreFunctions.IsInjected() == false) { pnlStatus.BackColor = Color.DarkRed;};
+            if (CoreFunctions.IsInjected() == true) { pnlStatus.BackColor = Color.DarkGreen;};
+
             this.lbScripts.Items.Clear();
             foreach (FileInfo fileInfo in new DirectoryInfo("./Scripts").GetFiles("*.txt"))
-            {
-                this.lbScripts.Items.Add(fileInfo.Name);
-            }
+                {this.lbScripts.Items.Add(fileInfo.Name);}
             foreach (FileInfo fileInfo2 in new DirectoryInfo("./Scripts").GetFiles("*.lua"))
-            {
-                this.lbScripts.Items.Add(fileInfo2.Name);
-            }
+                {this.lbScripts.Items.Add(fileInfo2.Name);}
         }
 
         private void lbScripts_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -93,7 +101,7 @@ namespace Executor
                 }
                 else
                 {
-                    MessageBox.Show("Файл не знайдено.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ErrorMsg("File not found!");
                 }
             }
         }
