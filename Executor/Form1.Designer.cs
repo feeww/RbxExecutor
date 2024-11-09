@@ -31,9 +31,10 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            pictureBox2 = new PictureBox();
             btnMinimise = new CodeeloUI.Controls.CodeeloButton();
-            pnlStatus = new Panel();
             btnClose = new CodeeloUI.Controls.CodeeloButton();
+            pnlStatus = new Panel();
             scriptTextBox = new FastColoredTextBoxNS.FastColoredTextBox();
             pictureBox1 = new PictureBox();
             brnKillRoblox = new CodeeloUI.Controls.CodeeloButton();
@@ -43,16 +44,17 @@
             btnPaste = new CodeeloUI.Controls.CodeeloButton();
             lbScripts = new ListBox();
             timer1 = new System.Windows.Forms.Timer(components);
-            pictureBox2 = new PictureBox();
+            lblInject = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)scriptTextBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(40, 40, 40);
+            panel1.Controls.Add(lblInject);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(btnMinimise);
             panel1.Controls.Add(btnClose);
@@ -61,6 +63,16 @@
             panel1.Size = new Size(799, 34);
             panel1.TabIndex = 3;
             panel1.MouseDown += panel1_MouseDown;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(-18, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(73, 34);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 13;
+            pictureBox2.TabStop = false;
             // 
             // btnMinimise
             // 
@@ -101,14 +113,6 @@
             btnMinimise.UseVisualStyleBackColor = false;
             btnMinimise.Click += btnMinimise_Click_1;
             // 
-            // pnlStatus
-            // 
-            pnlStatus.BackColor = Color.Brown;
-            pnlStatus.Location = new Point(0, 362);
-            pnlStatus.Name = "pnlStatus";
-            pnlStatus.Size = new Size(702, 10);
-            pnlStatus.TabIndex = 4;
-            // 
             // btnClose
             // 
             btnClose.AccessibleRole = null;
@@ -147,6 +151,14 @@
             btnClose.UseMnemonic = false;
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click_1;
+            // 
+            // pnlStatus
+            // 
+            pnlStatus.BackColor = Color.Brown;
+            pnlStatus.Location = new Point(0, 362);
+            pnlStatus.Name = "pnlStatus";
+            pnlStatus.Size = new Size(702, 10);
+            pnlStatus.TabIndex = 4;
             // 
             // scriptTextBox
             // 
@@ -405,7 +417,7 @@
             // 
             lbScripts.BackColor = Color.FromArgb(50, 50, 50);
             lbScripts.BorderStyle = BorderStyle.None;
-            lbScripts.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbScripts.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbScripts.ForeColor = SystemColors.Window;
             lbScripts.FormattingEnabled = true;
             lbScripts.Location = new Point(550, 165);
@@ -420,15 +432,16 @@
             timer1.Interval = 2000;
             timer1.Tick += timer1_Tick;
             // 
-            // pictureBox2
+            // lblInject
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(-18, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(73, 34);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 13;
-            pictureBox2.TabStop = false;
+            lblInject.AutoSize = true;
+            lblInject.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblInject.ForeColor = SystemColors.Control;
+            lblInject.Location = new Point(39, 5);
+            lblInject.Name = "lblInject";
+            lblInject.Size = new Size(122, 24);
+            lblInject.TabIndex = 14;
+            lblInject.Text = "Not Injected";
             // 
             // Form1
             // 
@@ -451,9 +464,10 @@
             Name = "Form1";
             Text = "Form1";
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)scriptTextBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -472,5 +486,6 @@
         private ListBox lbScripts;
         private System.Windows.Forms.Timer timer1;
         private PictureBox pictureBox2;
+        private Label lblInject;
     }
 }

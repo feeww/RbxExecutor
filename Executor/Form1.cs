@@ -77,8 +77,8 @@ namespace Executor
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (CoreFunctions.IsInjected() == false) { pnlStatus.BackColor = Color.DarkRed;};
-            if (CoreFunctions.IsInjected() == true) { pnlStatus.BackColor = Color.DarkGreen;};
+            if (CoreFunctions.IsInjected() == false) { pnlStatus.BackColor = Color.DarkRed; lblInject.Text = "Not Injected"; };
+            if (CoreFunctions.IsInjected() == true) { pnlStatus.BackColor = Color.DarkGreen;lblInject.Text = "Injected"; };
 
             this.lbScripts.Items.Clear();
             foreach (FileInfo fileInfo in new DirectoryInfo("./Scripts").GetFiles("*.txt"))
